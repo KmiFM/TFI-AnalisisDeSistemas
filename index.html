@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFI - Documentación y Artefactos</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-accent: #4f46e5; /* Podés cambiar este color principal */
+      --bg-soft: #f8fafc;
+    }
+
+    body {
+      background-color: var(--bg-soft);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: #1e293b;
+      font-size: 1.05rem; /* Letra grande y legible para proyección */
+      line-height: 1.65;
+    }
+
+    /* Barra superior fija para cambiar de Avance en 1 clic */
+    .navbar-tfi {
+      background-color: #ffffff;
+      border-bottom: 2px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .nav-pills .nav-link {
+      color: #475569;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      transition: all 0.2s;
+    }
+
+    .nav-pills .nav-link.active {
+      background-color: var(--primary-accent);
+      color: #ffffff;
+    }
+
+    /* Índice interno pegajoso (Sticky) */
+    .sidebar-index {
+      position: sticky;
+      top: 90px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .sidebar-index a {
+      display: block;
+      padding: 0.45rem 0.75rem;
+      color: #475569;
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .sidebar-index a:hover {
+      color: var(--primary-accent);
+      background-color: #f1f5f9;
+      border-left-color: var(--primary-accent);
+    }
+
+    /* Tarjetas de Artefactos */
+    .artifact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      scroll-margin-top: 95px; /* Evita que el header tape el título al navegar */
+    }
+
+    .artifact-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background-color: #eef2ff;
+      color: var(--primary-accent);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    /* Diagramas clicables para ampliar */
+    .diagram-wrapper {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #ffffff;
+      text-align: center;
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+
+    .diagram-wrapper:hover {
+      border-color: var(--primary-accent);
+    }
+
+    .diagram-wrapper img {
+      max-height: 450px;
+      width: auto;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE NAVEGACIÓN (SIEMPRE VISIBLE) -->
+  <nav class="navbar navbar-expand-lg navbar-tfi sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-layers-fill text-primary"></i>
+        <span>TFI · Nombre del Proyecto</span>
+      </a>
+
+      <!-- TABS DE LOS 4 AVANCES -->
+      <ul class="nav nav-pills ms-auto gap-2" id="avancesTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="av1-tab" data-bs-toggle="pill" data-bs-target="#avance1" type="button" role="tab">
+            Avance 1: Inicio y Visión
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="av2-tab" data-bs-toggle="pill" data-bs-target="#avance2" type="button" role="tab">
+            Avance 2: Requerimientos y CU
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="av3-tab" data-bs-toggle="pill" data-bs-target="#avance3" type="button" role="tab">
+            Avance 3: Análisis y Diseño
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="av4-tab" data-bs-toggle="pill" data-bs-target="#avance4" type="button" role="tab">
+            Avance 4: Prototipos y Cierre
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO DE LOS TABS -->
+  <div class="container my-4">
+    <div class="tab-content" id="avancesTabContent">
+
+      <!-- ==================== AVANCE 1 ==================== -->
+      <div class="tab-pane fade show active" id="avance1" role="tabpanel">
+        <div class="row">
+          <!-- Índice Rápido Lateral -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 1</p>
+              <a href="#av1-relevamiento">1. Relevamiento e Historia</a>
+              <a href="#av1-vision">2. Documento de Visión</a>
+              <a href="#av1-glosario">3. Glosario del Dominio</a>
+              <a href="#av1-reglas">4. Reglas de Negocio</a>
+            </div>
+          </div>
+
+          <!-- Contenido Principal -->
+          <div class="col-lg-9">
+            <div id="av1-relevamiento" class="artifact-card">
+              <span class="artifact-badge">Descubrimiento</span>
+              <h2 class="h4 fw-bold mt-2">1. Proceso de Recolección y Relevamiento</h2>
+              <p>Resumen de entrevistas, observación directa y problemática inicial detectada en la organización.</p>
+            </div>
+
+            <div id="av1-vision" class="artifact-card">
+              <span class="artifact-badge">Alcance</span>
+              <h2 class="h4 fw-bold mt-2">2. Documento de Visión</h2>
+              <p>Problema, interesados (stakeholders), alcance del sistema y objetivos principales.</p>
+            </div>
+
+            <div id="av1-glosario" class="artifact-card">
+              <span class="artifact-badge">Definiciones</span>
+              <h2 class="h4 fw-bold mt-2">3. Glosario</h2>
+              <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 25%;">Término</th>
+                    <th>Definición en el contexto del negocio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-semibold">Ejemplo Término</td>
+                    <td>Descripción clara y precisa del concepto.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="av1-reglas" class="artifact-card">
+              <span class="artifact-badge">Normativa</span>
+              <h2 class="h4 fw-bold mt-2">4. Reglas de Negocio</h2>
+              <ul>
+                <li><strong>RN-01:</strong> Descripción de la regla.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== AVANCE 2 ==================== -->
+      <div class="tab-pane fade" id="avance2" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 2</p>
+              <a href="#av2-srs">1. Requerimientos (IEEE 830)</a>
+              <a href="#av2-diagrama-cu">2. Diagrama General de CU</a>
+              <a href="#av2-especificacion-cu">3. Especificación de CU</a>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div id="av2-srs" class="artifact-card">
+              <span class="artifact-badge">Requerimientos</span>
+              <h2 class="h4 fw-bold mt-2">1. Requerimientos Funcionales y No Funcionales</h2>
+              <p>Listado estructurado de RF y RNF.</p>
+            </div>
+
+            <div id="av2-diagrama-cu" class="artifact-card">
+              <span class="artifact-badge">UML</span>
+              <h2 class="h4 fw-bold mt-2">2. Diagrama de Casos de Uso</h2>
+              <p class="text-muted small">Hacé clic sobre el diagrama para ampliarlo a pantalla completa.</p>
+              <!-- Ejemplo de contenedor de imagen con zoom -->
+              <div class="diagram-wrapper" onclick="ampliarImagen('https://via.placeholder.com/1200x700?text=Diagrama+de+Casos+de+Uso', 'Diagrama General de Casos de Uso')">
+                <img src="https://via.placeholder.com/1200x700?text=Diagrama+de+Casos+de+Uso" alt="Diagrama CU">
+              </div>
+            </div>
+
+            <div id="av2-especificacion-cu" class="artifact-card">
+              <span class="artifact-badge">Detalle</span>
+              <h2 class="h4 fw-bold mt-2">3. Especificación de Casos de Uso</h2>
+              <!-- Acordeón para no ocupar 10 páginas si tenés muchos CU -->
+              <div class="accordion mt-3" id="accordionCU">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cu01">
+                      CU-01: Registrar [Entidad]
+                    </button>
+                  </h2>
+                  <div id="cu01" class="accordion-collapse collapse show" data-bs-parent="#accordionCU">
+                    <div class="accordion-body">
+                      <strong>Actor Principal:</strong> Usuario<br>
+                      <strong>Precondiciones:</strong> Sesión iniciada.<br>
+                      <strong>Flujo Principal:</strong> 1. El sistema solicita...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== AVANCE 3 ==================== -->
+      <div class="tab-pane fade" id="avance3" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 3</p>
+              <a href="#av3-dominio">1. Modelo de Dominio / Clases</a>
+              <a href="#av3-secuencia">2. Diagramas de Secuencia</a>
+              <a href="#av3-estados">3. Diagramas de Estados / Actividad</a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div id="av3-dominio" class="artifact-card">
+              <span class="artifact-badge">Estructura</span>
+              <h2 class="h4 fw-bold mt-2">1. Modelo de Dominio / Diagrama de Clases</h2>
+              <p>Insertá acá tus diagramas estructurales con el mismo formato clicable.</p>
+            </div>
+            <div id="av3-secuencia" class="artifact-card">
+              <span class="artifact-badge">Comportamiento</span>
+              <h2 class="h4 fw-bold mt-2">2. Diagramas de Secuencia del Sistema (DSS)</h2>
+              <p>Interacciones entre actores y sistema.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== AVANCE 4 ==================== -->
+      <div class="tab-pane fade" id="avance4" role="tabpanel">
+        <div class="row">
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 4</p>
+              <a href="#av4-prototipos">1. Prototipos de Interfaz</a>
+              <a href="#av4-trazabilidad">2. Matriz de Trazabilidad</a>
+              <a href="#av4-conclusion">3. Conclusiones</a>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div id="av4-prototipos" class="artifact-card">
+              <span class="artifact-badge">UI / UX</span>
+              <h2 class="h4 fw-bold mt-2">1. Prototipos de Pantalla</h2>
+              <p>Podés incrustar imágenes en alta resolución o un iframe de Figma / enlace directo al prototipo interactivo.</p>
+            </div>
+            <div id="av4-trazabilidad" class="artifact-card">
+              <span class="artifact-badge">Control</span>
+              <h2 class="h4 fw-bold mt-2">2. Matriz de Trazabilidad</h2>
+              <p>Relación entre Requerimientos, Casos de Uso y Pantallas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL PARA VER DIAGRAMAS EN PANTALLA COMPLETA -->
+  <div class="modal fade" id="diagramModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="diagramModalTitle">Vista ampliada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body text-center bg-light">
+          <img id="diagramModalImg" src="" class="img-fluid" alt="Diagrama ampliado">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function ampliarImagen(src, titulo) {
+      document.getElementById('diagramModalImg').src = src;
+      document.getElementById('diagramModalTitle').textContent = titulo;
+      const modal = new bootstrap.Modal(document.getElementById('diagramModal'));
+      modal.show();
+    }
+  </script>
+</body>
+</html>
