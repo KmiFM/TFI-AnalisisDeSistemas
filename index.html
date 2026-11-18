@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TFI - Documentación y Artefactos</title>
+  <title>TFI · Instal-Gas | Análisis de Sistemas (UTN-FRT)</title>
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  
+
   <style>
     :root {
-      --primary-accent: #4f46e5; /* Podés cambiar este color principal */
+      --primary-accent: #1d4ed8; /* Azul técnico profesional */
+      --secondary-accent: #0ea5e9;
       --bg-soft: #f8fafc;
     }
 
@@ -19,22 +20,23 @@
       background-color: var(--bg-soft);
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       color: #1e293b;
-      font-size: 1.05rem; /* Letra grande y legible para proyección */
+      font-size: 1.05rem;
       line-height: 1.65;
     }
 
-    /* Barra superior fija para cambiar de Avance en 1 clic */
+    /* Barra superior fija */
     .navbar-tfi {
       background-color: #ffffff;
       border-bottom: 2px solid #e2e8f0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     }
 
     .nav-pills .nav-link {
       color: #475569;
       font-weight: 600;
       border-radius: 8px;
-      padding: 0.6rem 1.2rem;
+      padding: 0.55rem 1rem;
+      font-size: 0.95rem;
       transition: all 0.2s;
     }
 
@@ -43,7 +45,7 @@
       color: #ffffff;
     }
 
-    /* Índice interno pegajoso (Sticky) */
+    /* Índice interno pegajoso */
     .sidebar-index {
       position: sticky;
       top: 90px;
@@ -51,6 +53,7 @@
       border-radius: 12px;
       padding: 1.25rem;
       border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
     .sidebar-index a {
@@ -59,13 +62,14 @@
       color: #475569;
       text-decoration: none;
       border-left: 3px solid transparent;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 500;
+      transition: all 0.15s;
     }
 
     .sidebar-index a:hover {
       color: var(--primary-accent);
-      background-color: #f1f5f9;
+      background-color: #eff6ff;
       border-left-color: var(--primary-accent);
     }
 
@@ -75,74 +79,86 @@
       border: 1px solid #e2e8f0;
       border-radius: 12px;
       padding: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      scroll-margin-top: 95px; /* Evita que el header tape el título al navegar */
+      scroll-margin-top: 95px;
     }
 
     .artifact-badge {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      background-color: #eef2ff;
+      background-color: #dbeafe;
       color: var(--primary-accent);
-      padding: 0.35rem 0.75rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 6px;
       font-weight: 700;
     }
 
-    /* Diagramas clicables para ampliar */
+    /* Contenedor de diagramas con zoom */
     .diagram-wrapper {
       border: 1px solid #cbd5e1;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 1rem;
       background: #ffffff;
       text-align: center;
       cursor: zoom-in;
-      transition: transform 0.2s;
+      transition: all 0.2s;
     }
 
     .diagram-wrapper:hover {
       border-color: var(--primary-accent);
+      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.1);
     }
 
     .diagram-wrapper img {
-      max-height: 450px;
+      max-height: 420px;
       width: auto;
       max-width: 100%;
+    }
+
+    .process-box {
+      background-color: #f8fafc;
+      border-left: 4px solid var(--primary-accent);
+      padding: 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA SUPERIOR DE NAVEGACIÓN (SIEMPRE VISIBLE) -->
+  <!-- BARRA SUPERIOR DE NAVEGACIÓN -->
   <nav class="navbar navbar-expand-lg navbar-tfi sticky-top py-3">
     <div class="container">
       <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="#">
-        <i class="bi bi-layers-fill text-primary"></i>
-        <span>TFI · Nombre del Proyecto</span>
+        <i class="bi bi-fire text-primary fs-4"></i>
+        <div>
+          <span class="d-block lh-1">INSTAL-GAS</span>
+          <small class="text-muted fw-normal" style="font-size: 0.75rem;">TFI · Análisis de Sistemas (UTN-FRT)</small>
+        </div>
       </a>
 
       <!-- TABS DE LOS 4 AVANCES -->
-      <ul class="nav nav-pills ms-auto gap-2" id="avancesTab" role="tablist">
+      <ul class="nav nav-pills ms-auto gap-1" id="avancesTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="av1-tab" data-bs-toggle="pill" data-bs-target="#avance1" type="button" role="tab">
-            Avance 1: Inicio y Visión
+            1º Entrega: Organización y Negocio
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="av2-tab" data-bs-toggle="pill" data-bs-target="#avance2" type="button" role="tab">
-            Avance 2: Requerimientos y CU
+            2º Entrega: Requerimientos y CU
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="av3-tab" data-bs-toggle="pill" data-bs-target="#avance3" type="button" role="tab">
-            Avance 3: Análisis y Diseño
+            3º Entrega: Análisis y Diseño
           </button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="av4-tab" data-bs-toggle="pill" data-bs-target="#avance4" type="button" role="tab">
-            Avance 4: Prototipos y Cierre
+            4º Entrega: Prototipos y Cierre
           </button>
         </li>
       </ul>
@@ -153,167 +169,376 @@
   <div class="container my-4">
     <div class="tab-content" id="avancesTabContent">
 
-      <!-- ==================== AVANCE 1 ==================== -->
+      <!-- ==================== 1º ENTREGA (COMPLETA) ==================== -->
       <div class="tab-pane fade show active" id="avance1" role="tabpanel">
         <div class="row">
+
           <!-- Índice Rápido Lateral -->
           <div class="col-lg-3 d-none d-lg-block">
             <div class="sidebar-index">
-              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 1</p>
-              <a href="#av1-relevamiento">1. Relevamiento e Historia</a>
-              <a href="#av1-vision">2. Documento de Visión</a>
-              <a href="#av1-glosario">3. Glosario del Dominio</a>
-              <a href="#av1-reglas">4. Reglas de Negocio</a>
+              <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 1º Entrega</p>
+              <a href="#av1-caratula">0. Equipo y Cátedra</a>
+              <a href="#av1-historia">1. Historia, Misión y Visión</a>
+              <a href="#av1-alcance">2. Límite, Alcance y Estructura</a>
+              <a href="#av1-procesos">3. Procesos de Negocio</a>
+              <a href="#av1-bpd">4. Modelado con BPD</a>
+              <a href="#av1-elicitacion">5. Anexos: Elicitación</a>
             </div>
           </div>
 
           <!-- Contenido Principal -->
           <div class="col-lg-9">
-            <div id="av1-relevamiento" class="artifact-card">
-              <span class="artifact-badge">Descubrimiento</span>
-              <h2 class="h4 fw-bold mt-2">1. Proceso de Recolección y Relevamiento</h2>
-              <p>Resumen de entrevistas, observación directa y problemática inicial detectada en la organización.</p>
-            </div>
 
-            <div id="av1-vision" class="artifact-card">
-              <span class="artifact-badge">Alcance</span>
-              <h2 class="h4 fw-bold mt-2">2. Documento de Visión</h2>
-              <p>Problema, interesados (stakeholders), alcance del sistema y objetivos principales.</p>
-            </div>
+            <!-- 0. CARÁTULA / EQUIPO -->
+            <div id="av1-caratula" class="artifact-card">
+              <span class="artifact-badge">Presentación</span>
+              <h1 class="h3 fw-bold mt-2">Sistema de Gestión de Ventas y Servicios · Instal-Gas</h1>
+              <p class="text-muted mb-3">Universidad Tecnológica Nacional – Facultad Regional Tucumán · Ciclo 2026</p>
 
-            <div id="av1-glosario" class="artifact-card">
-              <span class="artifact-badge">Definiciones</span>
-              <h2 class="h4 fw-bold mt-2">3. Glosario</h2>
-              <table class="table table-bordered mt-3">
-                <thead class="table-light">
-                  <tr>
-                    <th style="width: 25%;">Término</th>
-                    <th>Definición en el contexto del negocio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="fw-semibold">Ejemplo Término</td>
-                    <td>Descripción clara y precisa del concepto.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <div class="p-3 bg-light rounded border">
+                    <small class="text-uppercase text-muted fw-bold d-block">Cátedra</small>
+                    <span><strong>Teoría:</strong> Prof. Silvana Marsiglia</span><br>
+                    <span><strong>Práctica:</strong> Prof. Alexandra Dufour</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 bg-light rounded border">
+                    <small class="text-uppercase text-muted fw-bold d-block">Ubicación del Caso de Estudio</small>
+                    <span>Av. Colón 149, San Miguel de Tucumán</span><br>
+                    <span><strong>Horario:</strong> 08:00 a 13:00 hs / 16:00 a 20:00 hs</span>
+                  </div>
+                </div>
+              </div>
 
-            <div id="av1-reglas" class="artifact-card">
-              <span class="artifact-badge">Normativa</span>
-              <h2 class="h4 fw-bold mt-2">4. Reglas de Negocio</h2>
-              <ul>
-                <li><strong>RN-01:</strong> Descripción de la regla.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ==================== AVANCE 2 ==================== -->
-      <div class="tab-pane fade" id="avance2" role="tabpanel">
-        <div class="row">
-          <div class="col-lg-3 d-none d-lg-block">
-            <div class="sidebar-index">
-              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 2</p>
-              <a href="#av2-srs">1. Requerimientos (IEEE 830)</a>
-              <a href="#av2-diagrama-cu">2. Diagrama General de CU</a>
-              <a href="#av2-especificacion-cu">3. Especificación de CU</a>
-            </div>
-          </div>
-
-          <div class="col-lg-9">
-            <div id="av2-srs" class="artifact-card">
-              <span class="artifact-badge">Requerimientos</span>
-              <h2 class="h4 fw-bold mt-2">1. Requerimientos Funcionales y No Funcionales</h2>
-              <p>Listado estructurado de RF y RNF.</p>
-            </div>
-
-            <div id="av2-diagrama-cu" class="artifact-card">
-              <span class="artifact-badge">UML</span>
-              <h2 class="h4 fw-bold mt-2">2. Diagrama de Casos de Uso</h2>
-              <p class="text-muted small">Hacé clic sobre el diagrama para ampliarlo a pantalla completa.</p>
-              <!-- Ejemplo de contenedor de imagen con zoom -->
-              <div class="diagram-wrapper" onclick="ampliarImagen('https://via.placeholder.com/1200x700?text=Diagrama+de+Casos+de+Uso', 'Diagrama General de Casos de Uso')">
-                <img src="https://via.placeholder.com/1200x700?text=Diagrama+de+Casos+de+Uso" alt="Diagrama CU">
+              <h6 class="fw-bold mt-3">Integrantes del Grupo:</h6>
+              <div class="row row-cols-1 row-cols-md-2 g-2 small">
+                <div class="col">• Hourcade, Gerónimo (Leg. 56038)</div>
+                <div class="col">• Díaz, Lucas (Leg. 52469)</div>
+                <div class="col">• Romero, Jonathan Matías (Leg. 56840)</div>
+                <div class="col">• Medina, Matías Ignacio (Leg. 46259)</div>
+                <div class="col">• Fuentes Maldonado, Camila (Leg. 64018)</div>
+                <div class="col">• Lastra, David (Leg. 44684)</div>
+                <div class="col">• Quirós, Martina (Leg. 53406)</div>
               </div>
             </div>
 
-            <div id="av2-especificacion-cu" class="artifact-card">
-              <span class="artifact-badge">Detalle</span>
-              <h2 class="h4 fw-bold mt-2">3. Especificación de Casos de Uso</h2>
-              <!-- Acordeón para no ocupar 10 páginas si tenés muchos CU -->
-              <div class="accordion mt-3" id="accordionCU">
+            <!-- 1. HISTORIA, MISIÓN, VISIÓN, OBJETIVOS Y VALORES -->
+            <div id="av1-historia" class="artifact-card">
+              <span class="artifact-badge">1. Contexto Organizacional</span>
+              <h2 class="h4 fw-bold mt-2">Historia de la Organización</h2>
+              <p>
+                <strong>Instal-Gas</strong> es una empresa familiar ubicada en Av. Colón 149 (San Miguel de Tucumán), dedicada a la venta de insumos sanitarios, artículos de plomería y gas, además de servicios técnicos de instalación y reparación a domicilio.
+              </p>
+              <p>
+                Tuvo sus orígenes en <strong>1940</strong>, fundada por una familia de inmigrantes sirios. Evolucionó hasta consolidarse como una PYME comercial. Actualmente está integrada por <strong>3 personas</strong> (el dueño/gerente general y dos empleados) que colaboran de manera flexible en atención al público, ventas y servicios técnicos. Gran parte de su gestión operativa sigue realizándose mediante cuadernos, agenda física y planillas de Excel.
+              </p>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="h6 fw-bold text-primary"><i class="bi bi-bullseye me-1"></i> Misión</h5>
+                    <p class="small mb-0">Ofrecer productos de calidad y un servicio excepcional que refleje el compromiso y preocupación de la empresa en cada uno de estos, manteniendo una relación cercana con los clientes, satisfaciendo sus necesidades y superando sus expectativas con ágil adaptación al mercado.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded h-100 bg-light">
+                    <h5 class="h6 fw-bold text-primary"><i class="bi bi-eye me-1"></i> Visión</h5>
+                    <p class="small mb-0">Aspirar a ser reconocidos como referentes en su área de trabajo y expandir la presencia del ámbito físico hacia el digital, llegando a ser un ícono de innovación y excelencia tanto en el servicio como en la calidad de sus productos.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <h6 class="fw-bold mt-2">Objetivos Estratégicos</h6>
+                  <ul class="small">
+                    <li>Fortalecer la presencia de marca en la ciudad y plataformas digitales.</li>
+                    <li>Incrementar la satisfacción del cliente mejorando procesos y personalizando la atención en ventas y servicios.</li>
+                    <li>Diversificar la gama de productos según las tendencias del mercado.</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="fw-bold mt-2">Valores</h6>
+                  <ul class="small">
+                    <li><strong>Compromiso:</strong> Con los clientes y la calidad de los productos.</li>
+                    <li><strong>Resiliencia:</strong> Adaptación y aprendizaje ante desafíos.</li>
+                    <li><strong>Integridad:</strong> Honestidad y transparencia en cada transacción.</li>
+                    <li><strong>Innovación:</strong> Búsqueda constante de mejora y evolución.</li>
+                    <li><strong>Comunidad:</strong> Sentido de pertenencia y apoyo mutuo.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. LÍMITE, ALCANCE Y ORGANIZACIÓN -->
+            <div id="av1-alcance" class="artifact-card">
+              <span class="artifact-badge">2. Organización y Alcance</span>
+              <h2 class="h4 fw-bold mt-2">Límite y Alcance del Sistema de Estudio</h2>
+              <p>
+                El sistema abarca la <strong>gestión integral de ventas de productos, manejo de stock y coordinación de servicios técnicos</strong> de Instal-Gas, desde la atención inicial al cliente (presencial o telefónica) hasta la finalización de la venta o prestación del servicio.
+              </p>
+
+              <div class="p-3 bg-primary-subtle border border-primary-subtle rounded mb-4">
+                <h6 class="fw-bold text-primary-emphasis mb-2">Procesos incluidos dentro del alcance:</h6>
+                <div class="row row-cols-1 row-cols-md-2 g-1 small">
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Registro y atención de clientes.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Venta de productos e insumos.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Gestión y actualización de stock.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Coordinación y asignación de servicios técnicos.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Gestión de turnos y atención de emergencias.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Registro de órdenes de trabajo.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Facturación de comprobantes tipo A, B, C y remito X.</div>
+                  <div><i class="bi bi-check-circle-fill text-primary me-1"></i> Registro de pagos y seguimiento de operaciones.</div>
+                </div>
+              </div>
+
+              <h5 class="h6 fw-bold">Estructura y Funciones de los Cargos</h5>
+              <div class="accordion mb-4" id="accordionCargos">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cu01">
-                      CU-01: Registrar [Entidad]
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cargo1">
+                      Directorio
                     </button>
                   </h2>
-                  <div id="cu01" class="accordion-collapse collapse show" data-bs-parent="#accordionCU">
-                    <div class="accordion-body">
-                      <strong>Actor Principal:</strong> Usuario<br>
-                      <strong>Precondiciones:</strong> Sesión iniciada.<br>
-                      <strong>Flujo Principal:</strong> 1. El sistema solicita...
+                  <div id="cargo1" class="accordion-collapse collapse" data-bs-parent="#accordionCargos">
+                    <div class="accordion-body small">
+                      Definir la visión y estrategia a largo plazo, supervisar la gestión de gerencia, identificar y gestionar riesgos financieros/legales/reputacionales y mantener contacto con inversores.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cargo2">
+                      Gerente General
+                    </button>
+                  </h2>
+                  <div id="cargo2" class="accordion-collapse collapse" data-bs-parent="#accordionCargos">
+                    <div class="accordion-body small">
+                      Ejecutar estrategias del Directorio, supervisar operaciones diarias, liderar y motivar vendedores (turno mañana y tarde), reportar novedades y tomar decisiones operativas en tiempo real.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cargo3">
+                      Área de Atención al Cliente
+                    </button>
+                  </h2>
+                  <div id="cargo3" class="accordion-collapse collapse" data-bs-parent="#accordionCargos">
+                    <div class="accordion-body small">
+                      Asesorar clientes sobre productos disponibles, gestionar adecuadamente el stock, registrar ventas para informes de Gerencia, colaborar en equipo y cumplir metas comerciales.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#cargo4">
+                      Área de Servicios Técnicos
+                    </button>
+                  </h2>
+                  <div id="cargo4" class="accordion-collapse collapse" data-bs-parent="#accordionCargos">
+                    <div class="accordion-body small">
+                      Asesorar sobre problemas técnicos y soluciones, registrar el tipo de servicio y remuneración para Gerencia, y efectuar instalaciones/reparaciones a domicilio cumpliendo normativas de calidad.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h5 class="h6 fw-bold">Organigrama</h5>
+              <p class="text-muted small">Hacé clic en la imagen para ampliarla.</p>
+              <div class="diagram-wrapper" onclick="ampliarImagen('img/organigrama.png', 'Organigrama · Instal-Gas')">
+                <img src="img/organigrama.png" alt="Organigrama Instal-Gas (Guardar captura en img/organigrama.png)">
+              </div>
+            </div>
+
+            <!-- 3. DESCRIPCIÓN DE PROCESOS DE NEGOCIO -->
+            <div id="av1-procesos" class="artifact-card">
+              <span class="artifact-badge">3. Relevamiento Operativo</span>
+              <h2 class="h4 fw-bold mt-2">Descripción de los Procesos de Negocio (Situación Actual)</h2>
+
+              <div class="process-box">
+                <h5 class="h6 fw-bold text-primary">Caso 1: Venta de Productos</h5>
+                <ol class="small mb-0">
+                  <li>El cliente ingresa al local o llama consultando por un producto y es asesorado según necesidad y presupuesto.</li>
+                  <li>El vendedor verifica manualmente la disponibilidad en stock. Si no hay disponibilidad, ofrece productos sustitutos o similares.</li>
+                  <li>Si el cliente acepta, se registra manualmente en Excel: <em>Fecha, Nombre del producto, Cantidad, Precio unitario y Precio total</em>.</li>
+                  <li>Se informa el monto final, se consulta el tipo de comprobante requerido, el cliente abona y se entrega la mercadería con su comprobante.</li>
+                </ol>
+              </div>
+
+              <div class="process-box">
+                <h5 class="h6 fw-bold text-primary">Caso 2: Actualización de Stock</h5>
+                <ol class="small mb-0">
+                  <li>Llega mercadería de un proveedor al local.</li>
+                  <li>El encargado verifica manualmente cantidades y artículos contra la factura o pedido. Si hay faltantes o daños, reclama al proveedor.</li>
+                  <li>Si está correcto, registra en un cuaderno y actualiza Excel con: <em>Nombre del producto, Cantidad ingresada, Precio actualizado y Fecha de ingreso</em>.</li>
+                  <li>Se almacena la mercadería en el local quedando disponible para la venta.</li>
+                </ol>
+              </div>
+
+              <div class="process-box">
+                <h5 class="h6 fw-bold text-primary">Caso 3: Facturación</h5>
+                <ol class="small mb-0">
+                  <li>Finalizada una venta o servicio técnico, se consulta la condición fiscal del cliente.</li>
+                  <li>Se determina el comprobante a emitir: <strong>Factura A, B, C o Comprobante tipo "X"</strong> (remito interno sin validez fiscal).</li>
+                  <li>Se cargan manualmente: <em>Datos del cliente, Productos/servicios, Cantidad, Precio e Importe total</em>.</li>
+                  <li>Se entrega el comprobante al cliente y queda registrada la operación.</li>
+                </ol>
+              </div>
+
+              <div class="process-box">
+                <h5 class="h6 fw-bold text-primary">Caso 4: Gestión de Servicios Técnicos</h5>
+                <ol class="small mb-0">
+                  <li>El cliente solicita instalación, reparación o mantenimiento por teléfono o en el local.</li>
+                  <li>Se consulta disponibilidad en una <strong>agenda física</strong> y se anota: <em>Nombre, Dirección, Tipo de problema/servicio, Fecha, Horario acordado y Contacto</em>.</li>
+                  <li><strong>Regla de prioridad:</strong> Las emergencias (pérdidas de agua o fugas de gas) reciben prioridad inmediata sobre turnos programados.</li>
+                  <li>El técnico asiste al domicilio, realiza el trabajo, informa el costo, se emite comprobante si corresponde y se registra manualmente.</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- 4. MODELADO DE NEGOCIO CON BPD -->
+            <div id="av1-bpd" class="artifact-card">
+              <span class="artifact-badge">4. Diagramas BPMN / BPD</span>
+              <h2 class="h4 fw-bold mt-2">Modelado de Negocio con BPD</h2>
+              <p class="text-muted small">Seleccioná el proceso para visualizar su diagrama BPD. Hacé clic sobre el gráfico para proyectarlo en pantalla completa.</p>
+
+              <!-- Sub-tabs internos para navegar rápido entre los 4 BPD -->
+              <ul class="nav nav-tabs mb-3" id="bpdTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#bpd1" type="button">4.1 Venta de Productos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpd2" type="button">4.2 Actualización de Stock</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpd3" type="button">4.3 Facturación</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpd4" type="button">4.4 Servicios Técnicos</button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="bpd1">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/bpd-ventas.png', 'BPD 4.1 · Caso 1: Venta de Productos')">
+                    <img src="img/bpd-ventas.png" alt="BPD Venta de Productos (Guardar en img/bpd-ventas.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpd2">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/bpd-stock.png', 'BPD 4.2 · Caso 2: Actualización de Stock')">
+                    <img src="img/bpd-stock.png" alt="BPD Actualización de Stock (Guardar en img/bpd-stock.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpd3">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/bpd-facturacion.png', 'BPD 4.3 · Caso 3: Facturación')">
+                    <img src="img/bpd-facturacion.png" alt="BPD Facturación (Guardar en img/bpd-facturacion.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpd4">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/bpd-servicios.png', 'BPD 4.4 · Caso 4: Gestión de Servicios Técnicos')">
+                    <img src="img/bpd-servicios.png" alt="BPD Servicios Técnicos (Guardar en img/bpd-servicios.png)">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. ANEXOS: ELICITACIÓN -->
+            <div id="av1-elicitacion" class="artifact-card">
+              <span class="artifact-badge">5. Anexos</span>
+              <h2 class="h4 fw-bold mt-2">5.1 Elicitación (Entrevistas no estructuradas)</h2>
+              <p class="small text-muted">Lugar: "Instal-Gas" – Av. Colón 149, San Miguel de Tucumán.</p>
+
+              <div class="accordion" id="accordionEntrevistas">
+                <!-- Entrevista 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#ent1">
+                      Entrevista 1: Proceso de Ventas · José Antonio Asse (Empleado) — 26/04/2026
+                    </button>
+                  </h2>
+                  <div id="ent1" class="accordion-collapse collapse show" data-bs-parent="#accordionEntrevistas">
+                    <div class="accordion-body small">
+                      <p><strong>¿Cuál es el procedimiento para registrar una venta?</strong><br>
+                      Se verifica el precio en Excel y se comunica. Si el cliente acepta, se abre el archivo de ventas y se registra: fecha actual, nombre exacto del artículo, cantidad, precio unitario y total.</p>
+                      <p><strong>¿Cómo persuaden al cliente y determinan el producto adecuado?</strong><br>
+                      Atención personalizada, conexión directa y alternativas ajustadas a su presupuesto. Los vendedores prueban previamente los productos para asesorar con precisión y evitar devoluciones.</p>
+                      <p><strong>¿Qué hacen si un artículo está agotado?</strong><br>
+                      Se ofrecen alternativas similares o productos disponibles que cumplan la misma función.</p>
+                      <p class="mb-0"><strong>¿Qué estrategias usan para fidelizar clientes?</strong><br>
+                      Incentivar el seguimiento en redes sociales para mantener comunicación activa y avisar sobre nuevos ingresos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Entrevista 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#ent2">
+                      Entrevista 2: Actualización de Stock · Antonio César Asse (Dueño) — 26/04/2026
+                    </button>
+                  </h2>
+                  <div id="ent2" class="accordion-collapse collapse" data-bs-parent="#accordionEntrevistas">
+                    <div class="accordion-body small">
+                      <p><strong>¿Cómo se gestiona el inventario?</strong><br>
+                      No tienen claridad en tiempo real del inventario; actualmente solo verifican que la mercadería recibida sea correcta. El sistema busca mantener control sobre la disponibilidad.</p>
+                      <p class="mb-0"><strong>¿Cuál es el procedimiento de recepción de mercadería?</strong><br>
+                      El dueño verifica estado óptimo y controla cantidades contra la factura del proveedor. Luego anota en un cuaderno y actualiza el precio en Excel.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Entrevista 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#ent3">
+                      Entrevista 3: Estructura, Facturación y Servicios · Antonio César Asse (Dueño) — 28/05/2026
+                    </button>
+                  </h2>
+                  <div id="ent3" class="accordion-collapse collapse" data-bs-parent="#accordionEntrevistas">
+                    <div class="accordion-body small">
+                      <p><strong>Personal y división del trabajo:</strong><br>
+                      Son 3 personas con tareas flexibles y colaborativas. Hay un sector de servicios a domicilio y otro de venta al público; entre todos mantienen el stock manualmente.</p>
+                      <p><strong>Facturación y alcance geográfico:</strong><br>
+                      Emiten facturas A, B, C y comprobante X (remito sin validez). Cubren San Miguel de Tucumán y alrededores, viajando a otras provincias en casos excepcionales.</p>
+                      <p class="mb-0"><strong>Horarios y coordinación de turnos:</strong><br>
+                      Atienden de 08:00 a 13:00 y de 16:00 a 20:00 hs. Las instalaciones/reparaciones se coordinan en agenda de papel y lápiz por orden de llegada, dando prioridad absoluta a emergencias (fugas de gas o agua).</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      <!-- ==================== AVANCE 3 ==================== -->
+      <!-- ==================== 2º ENTREGA (LISTA PARA COMPLETAR) ==================== -->
+      <div class="tab-pane fade" id="avance2" role="tabpanel">
+        <div class="artifact-card text-center py-5">
+          <i class="bi bi-diagram-3 fs-1 text-primary"></i>
+          <h3 class="h4 fw-bold mt-2">2º Entrega: Requerimientos y Casos de Uso</h3>
+          <p class="text-muted">Pasame el documento de la 2º entrega y lo integramos acá con el mismo formato.</p>
+        </div>
+      </div>
+
+      <!-- ==================== 3º ENTREGA (LISTA PARA COMPLETAR) ==================== -->
       <div class="tab-pane fade" id="avance3" role="tabpanel">
-        <div class="row">
-          <div class="col-lg-3 d-none d-lg-block">
-            <div class="sidebar-index">
-              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 3</p>
-              <a href="#av3-dominio">1. Modelo de Dominio / Clases</a>
-              <a href="#av3-secuencia">2. Diagramas de Secuencia</a>
-              <a href="#av3-estados">3. Diagramas de Estados / Actividad</a>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <div id="av3-dominio" class="artifact-card">
-              <span class="artifact-badge">Estructura</span>
-              <h2 class="h4 fw-bold mt-2">1. Modelo de Dominio / Diagrama de Clases</h2>
-              <p>Insertá acá tus diagramas estructurales con el mismo formato clicable.</p>
-            </div>
-            <div id="av3-secuencia" class="artifact-card">
-              <span class="artifact-badge">Comportamiento</span>
-              <h2 class="h4 fw-bold mt-2">2. Diagramas de Secuencia del Sistema (DSS)</h2>
-              <p>Interacciones entre actores y sistema.</p>
-            </div>
-          </div>
+        <div class="artifact-card text-center py-5">
+          <i class="bi bi-boxes fs-1 text-primary"></i>
+          <h3 class="h4 fw-bold mt-2">3º Entrega: Análisis y Diseño</h3>
+          <p class="text-muted">Pasame el documento de la 3º entrega y armamos esta pestaña.</p>
         </div>
       </div>
 
-      <!-- ==================== AVANCE 4 ==================== -->
+      <!-- ==================== 4º ENTREGA (LISTA PARA COMPLETAR) ==================== -->
       <div class="tab-pane fade" id="avance4" role="tabpanel">
-        <div class="row">
-          <div class="col-lg-3 d-none d-lg-block">
-            <div class="sidebar-index">
-              <p class="fw-bold text-uppercase small text-muted mb-2">Artefactos Avance 4</p>
-              <a href="#av4-prototipos">1. Prototipos de Interfaz</a>
-              <a href="#av4-trazabilidad">2. Matriz de Trazabilidad</a>
-              <a href="#av4-conclusion">3. Conclusiones</a>
-            </div>
-          </div>
-          <div class="col-lg-9">
-            <div id="av4-prototipos" class="artifact-card">
-              <span class="artifact-badge">UI / UX</span>
-              <h2 class="h4 fw-bold mt-2">1. Prototipos de Pantalla</h2>
-              <p>Podés incrustar imágenes en alta resolución o un iframe de Figma / enlace directo al prototipo interactivo.</p>
-            </div>
-            <div id="av4-trazabilidad" class="artifact-card">
-              <span class="artifact-badge">Control</span>
-              <h2 class="h4 fw-bold mt-2">2. Matriz de Trazabilidad</h2>
-              <p>Relación entre Requerimientos, Casos de Uso y Pantallas.</p>
-            </div>
-          </div>
+        <div class="artifact-card text-center py-5">
+          <i class="bi bi-window-sidebar fs-1 text-primary"></i>
+          <h3 class="h4 fw-bold mt-2">4º Entrega: Prototipos y Cierre</h3>
+          <p class="text-muted">Pasame el documento/prototipos de la 4º entrega para cerrar el TFI.</p>
         </div>
       </div>
 
