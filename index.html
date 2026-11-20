@@ -11,7 +11,6 @@
   
   <style>
     :root {
-      /* Paleta alineada con los Prototipos No Operacionales de Instal-Gas */
       --primary-accent: #0d9488; 
       --primary-dark: #115e59;
       --navbar-dark: #0f172a;
@@ -26,7 +25,6 @@
       line-height: 1.6;
     }
 
-    /* Barra superior fija */
     .navbar-tfi {
       background-color: var(--navbar-dark);
       border-bottom: 3px solid var(--primary-accent);
@@ -52,7 +50,6 @@
       color: #ffffff;
     }
 
-    /* Índice interno pegajoso */
     .sidebar-index {
       position: sticky;
       top: 90px;
@@ -80,7 +77,6 @@
       border-left-color: var(--primary-accent);
     }
 
-    /* Tarjetas de Artefactos */
     .artifact-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -102,7 +98,6 @@
       font-weight: 700;
     }
 
-    /* Contenedor de diagramas y prototipos con zoom */
     .diagram-wrapper {
       border: 1px solid #cbd5e1;
       border-radius: 10px;
@@ -188,7 +183,7 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="av2-tab" data-bs-toggle="pill" data-bs-target="#avance2" type="button" role="tab">
-            2º Entrega: Requerimientos
+            2º Entrega: Visión y Reglas
           </button>
         </li>
         <li class="nav-item" role="presentation">
@@ -213,20 +208,18 @@
       <div class="tab-pane fade show active" id="avance1" role="tabpanel">
         <div class="row">
           
-          <!-- Índice Rápido Lateral -->
           <div class="col-lg-3 d-none d-lg-block">
             <div class="sidebar-index">
               <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 1º Entrega</p>
               <a href="#av1-caratula">0. Equipo y Cátedra</a>
               <a href="#av1-historia">1. Historia, Misión y Visión</a>
               <a href="#av1-alcance">2. Límite, Alcance y Estructura</a>
-              <a href="#av1-procesos">3. Procesos de Negocio</a>
+              <a href="#av1-procesos">3. Procesos Actuales (As-Is)</a>
               <a href="#av1-bpd">4. Modelado con BPD</a>
               <a href="#av1-elicitacion">5. Anexos: Elicitación</a>
             </div>
           </div>
 
-          <!-- Contenido Principal -->
           <div class="col-lg-9">
 
             <!-- 0. CARÁTULA / EQUIPO -->
@@ -253,12 +246,10 @@
               </div>
 
               <h6 class="fw-bold mt-3">Integrantes del Grupo:</h6>
-              <div class="row row-cols-1 row-cols-md-2 g-2 small">
+              <div class="row row-cols-1 row-cols-md-3 g-2 small">
                 <div class="col">• Díaz, Lucas (Leg. 52469)</div>
                 <div class="col">• Romero, Jonathan Matías (Leg. 56840)</div>
-                <div class="col">• Medina, Matías Ignacio (Leg. 46259)</div>
                 <div class="col">• Fuentes Maldonado, Camila (Leg. 64018)</div>
-                <div class="col text-muted">• Hourcade, Gerónimo (56038) · Lastra, David (44684) · Quirós, Martina (53406) <em>(1ª Etapa)</em></div>
               </div>
             </div>
 
@@ -270,13 +261,13 @@
                 <strong>Instal-Gas</strong> es una empresa familiar ubicada en Av. Colón 149 (San Miguel de Tucumán), dedicada a la venta de insumos sanitarios, artículos de plomería y gas, además de brindar servicios técnicos de instalación y reparación a domicilio.
               </p>
               <p>
-                Tuvo sus orígenes en <strong>1940</strong>, cuando una familia de inmigrantes provenientes de Siria comenzó un emprendimiento familiar que evolucionó hasta consolidarse como una PYME con local comercial propio. Actualmente está conformada por <strong>3 personas</strong> (el dueño/gerente general y dos empleados) que participan de forma flexible en atención al público, ventas y servicios técnicos. Gran parte de la gestión operativa sigue realizándose manualmente mediante cuadernos, agenda física y planillas de Excel.
+                Tuvo sus orígenes en <strong>1940</strong>, fundada por una familia de inmigrantes provenientes de Siria. Evolucionó hasta consolidarse como una PYME con local comercial propio. Actualmente está conformada por <strong>3 personas</strong> (el dueño/gerente general y dos empleados) que colaboran de forma flexible en atención al público, ventas y servicios técnicos.
               </p>
 
               <div class="row g-3 mt-2">
                 <div class="col-md-6">
                   <div class="p-3 border rounded h-100 bg-light">
-                    <h5 class="h6 fw-bold text-teal" style="color: var(--primary-dark);"><i class="bi bi-bullseye me-1"></i> Misión</h5>
+                    <h5 class="h6 fw-bold" style="color: var(--primary-dark);"><i class="bi bi-bullseye me-1"></i> Misión</h5>
                     <p class="small mb-0">Ofrecer productos de calidad y un servicio excepcional que refleje el compromiso y preocupación de la empresa, manteniendo una relación cercana con los clientes, satisfaciendo sus necesidades y superando sus expectativas con ágil adaptación al mercado.</p>
                   </div>
                 </div>
@@ -335,7 +326,7 @@
               <h5 class="h6 fw-bold">Organigrama</h5>
               <p class="text-muted small">Hacé clic en el gráfico para ampliarlo.</p>
               <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/organigrama.png', 'Organigrama · Instal-Gas')">
-                <img src="img/etapa1/organigrama.png" alt="Organigrama Instal-Gas (Guardar en img/etapa1/organigrama.png)">
+                <img src="img/etapa1/organigrama.png" alt="Organigrama Instal-Gas (img/etapa1/organigrama.png)">
               </div>
             </div>
 
@@ -384,7 +375,7 @@
 
             <!-- 4. MODELADO DE NEGOCIO CON BPD -->
             <div id="av1-bpd" class="artifact-card">
-              <span class="artifact-badge">4. Diagramas BPMN / BPD</span>
+              <span class="artifact-badge">4. Diagramas BPMN / BPD (As-Is)</span>
               <h2 class="h4 fw-bold mt-2">Modelado de Negocio con BPD</h2>
               <p class="text-muted small">Seleccioná el proceso y hacé clic sobre el diagrama para ampliarlo.</p>
 
@@ -397,22 +388,22 @@
 
               <div class="tab-content">
                 <div class="tab-pane fade show active" id="bpd1">
-                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-ventas.png', 'BPD 4.1 · Venta de Productos')">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-ventas.png', 'BPD 4.1 · Venta de Productos (Actual)')">
                     <img src="img/etapa1/bpd-ventas.png" alt="BPD Venta de Productos (img/etapa1/bpd-ventas.png)">
                   </div>
                 </div>
                 <div class="tab-pane fade" id="bpd2">
-                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-stock.png', 'BPD 4.2 · Actualización de Stock')">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-stock.png', 'BPD 4.2 · Actualización de Stock (Actual)')">
                     <img src="img/etapa1/bpd-stock.png" alt="BPD Actualización de Stock (img/etapa1/bpd-stock.png)">
                   </div>
                 </div>
                 <div class="tab-pane fade" id="bpd3">
-                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-facturacion.png', 'BPD 4.3 · Facturación')">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-facturacion.png', 'BPD 4.3 · Facturación (Actual)')">
                     <img src="img/etapa1/bpd-facturacion.png" alt="BPD Facturación (img/etapa1/bpd-facturacion.png)">
                   </div>
                 </div>
                 <div class="tab-pane fade" id="bpd4">
-                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-servicios.png', 'BPD 4.4 · Gestión de Servicios Técnicos')">
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa1/bpd-servicios.png', 'BPD 4.4 · Gestión de Servicios Técnicos (Actual)')">
                     <img src="img/etapa1/bpd-servicios.png" alt="BPD Servicios Técnicos (img/etapa1/bpd-servicios.png)">
                   </div>
                 </div>
@@ -446,7 +437,7 @@
                   </h2>
                   <div id="ent2" class="accordion-collapse collapse" data-bs-parent="#accordionEntrevistas">
                     <div class="accordion-body small">
-                      <p><strong>Control de inventario:</strong> No hay claridad en tiempo real; solo verifican mercadería recibida contra factura del proveedor, anotan en cuaderno y actualizan precio en Excel.</p>
+                      <p class="mb-0"><strong>Control de inventario:</strong> No hay claridad en tiempo real; solo verifican mercadería recibida contra factura del proveedor, anotan en cuaderno y actualizan precio en Excel.</p>
                     </div>
                   </div>
                 </div>
@@ -470,12 +461,377 @@
         </div>
       </div>
 
-      <!-- ==================== 2º ENTREGA (PENDIENTE) ==================== -->
+      <!-- ==================== 2º ENTREGA (COMPLETA) ==================== -->
       <div class="tab-pane fade" id="avance2" role="tabpanel">
-        <div class="artifact-card text-center py-5">
-          <i class="bi bi-file-earmark-check fs-1" style="color: var(--primary-accent);"></i>
-          <h3 class="h4 fw-bold mt-2">2º Entrega: Especificación de Requerimientos (SRS)</h3>
-          <p class="text-muted">Pasame el documento de la 2º entrega (Requerimientos Funcionales, No Funcionales y Reglas de Negocio) para completarlo acá.</p>
+        <div class="row">
+
+          <!-- Índice Rápido Lateral -->
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 2º Entrega</p>
+              <a href="#av2-vision">1. Documento Visión</a>
+              <a href="#av2-stakeholders">2. Stakeholders y Usuarios</a>
+              <a href="#av2-reglas">3. Reglas de Negocio (11)</a>
+              <a href="#av2-procesos-sis">4. Procesos Rediseñados (BPD)</a>
+              <a href="#av2-glosario">5. Glosario y Diccionario</a>
+            </div>
+          </div>
+
+          <!-- Contenido Principal -->
+          <div class="col-lg-9">
+
+            <!-- 1. DOCUMENTO VISIÓN -->
+            <div id="av2-vision" class="artifact-card">
+              <span class="artifact-badge">MOD_VISION (V2.0)</span>
+              <h2 class="h4 fw-bold mt-2">1. Documento Visión y Planteo del Problema</h2>
+              <p class="small">
+                Comunica el propósito del Sistema de Gestión de Ventas de Instal-Gas, abarcando desde la atención inicial del cliente (presencial o telefónica) hasta la finalización de la venta o servicio técnico, incluyendo la emisión de comprobantes A, B, C y X.
+              </p>
+
+              <div class="table-responsive mt-3">
+                <table class="table table-bordered align-middle small">
+                  <tbody>
+                    <tr>
+                      <th class="bg-light" style="width: 28%;">El problema / oportunidad</th>
+                      <td>La gestión administrativa y operativa (ventas, stock, turnos técnicos y facturación) se realiza casi totalmente de forma manual mediante cuadernos, llamadas, agenda física y planillas Excel no centralizadas entre sí.</td>
+                    </tr>
+                    <tr>
+                      <th class="bg-light">Afecta a</th>
+                      <td>Al dueño y Gerente General, a los empleados de Atención al Cliente y Servicios Técnicos, y a los clientes de la empresa.</td>
+                    </tr>
+                    <tr>
+                      <th class="bg-light">Una adecuada solución sería</th>
+                      <td>Un sistema de información que centralice el registro de ventas, el control de stock, la asignación de turnos técnicos y la emisión de comprobantes, eliminando soportes manuales dispersos.</td>
+                    </tr>
+                    <tr>
+                      <th class="bg-light">Impacto / Beneficio</th>
+                      <td>Reducir errores de carga y desactualización de precios/stock, agilizar la atención al cliente por cualquier canal, mejorar el seguimiento de órdenes de trabajo y facilitar el control administrativo y toma de decisiones del dueño.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h5 class="h6 fw-bold mt-4">Características Principales del Producto (Módulos)</h5>
+              <div class="row g-3 mt-1 small">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <strong style="color: var(--primary-dark);">1. Gestión de Ventas:</strong> Registro de productos e insumos, verificación de stock en tiempo real, oferta de sustitutos y constancia completa de cada operación.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <strong style="color: var(--primary-dark);">2. Gestión de Stock:</strong> Registro de ingreso de mercadería de proveedores, validación contra pedido y actualización automática de stock, costos y fechas.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <strong style="color: var(--primary-dark);">3. Facturación:</strong> Determinación automática del comprobante (Factura A, B, C o remito interno X) según condición fiscal del cliente.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <strong style="color: var(--primary-dark);">4. Gestión de Servicios Técnicos:</strong> Solicitudes presenciales/telefónicas, agenda digital, priorización automática de emergencias (fugas de gas o agua) y facturación del servicio.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. STAKEHOLDERS -->
+            <div id="av2-stakeholders" class="artifact-card">
+              <span class="artifact-badge">Interesados</span>
+              <h2 class="h4 fw-bold mt-2">2. Personal Involucrado (Stakeholders y Usuarios)</h2>
+              <div class="table-responsive mt-3">
+                <table class="table table-bordered table-hover small">
+                  <thead class="table-light">
+                    <tr>
+                      <th style="width: 28%;">Rol / Nombre</th>
+                      <th style="width: 18%;">Tipo</th>
+                      <th>Descripción y Responsabilidades</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-semibold">Directorio</td>
+                      <td><span class="badge bg-secondary">No Usuario</span></td>
+                      <td>Máximo nivel de conducción. Define visión y estrategia, supervisa gestión y gestiona riesgos.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Dueño / Gerente General<br><small class="text-muted">(Antonio César Asse)</small></td>
+                      <td><span class="badge bg-success">Usuario Admin</span></td>
+                      <td>Usuario administrador del sistema: registra ventas, gestiona stock/productos/proveedores, asigna turnos y consulta información general.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Empleados · Atención al Cliente</td>
+                      <td><span class="badge bg-primary">Usuario Directo</span></td>
+                      <td>Atienden consultas, registran ventas, gestionan clientes y consultan disponibilidad de stock.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Empleados · Servicios Técnicos<br><small class="text-muted">(ej. José Antonio Asse)</small></td>
+                      <td><span class="badge bg-primary">Usuario Directo</span></td>
+                      <td>Registran solicitudes de servicio técnico, gestionan turnos y emiten comprobantes de servicio.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3. REGLAS DE NEGOCIO -->
+            <div id="av2-reglas" class="artifact-card">
+              <span class="artifact-badge">REQ_ESPCOMP (V2.0)</span>
+              <h2 class="h4 fw-bold mt-2">3. Reglas del Dominio (RN-01 a RN-11)</h2>
+              <div class="table-responsive mt-3">
+                <table class="table table-bordered table-striped small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th style="width: 8%;">ID</th>
+                      <th>Regla de Negocio</th>
+                      <th style="width: 14%;">Variación</th>
+                      <th style="width: 22%;">Origen</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">RN-01</td>
+                      <td>Los días jueves se aplica un <strong>30% de descuento en la segunda unidad</strong>, abonando en efectivo.</td>
+                      <td>Bajo</td>
+                      <td>Dueño (Antonio C. Asse)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-02</td>
+                      <td>Los productos deben mantener siempre una <strong>ganancia mínima del 30%</strong> respecto al precio de costo.</td>
+                      <td>Bajo</td>
+                      <td>Dueño (Antonio C. Asse)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-03</td>
+                      <td>Los clientes disponen de <strong>12 horas</strong> desde la compra para solicitar devoluciones o reembolsos de productos no utilizados/defectuosos (se extiende a <strong>24 horas</strong> si la compra fue fuera del horario de cierre).</td>
+                      <td>Medio</td>
+                      <td>Dueño (Antonio C. Asse)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-04</td>
+                      <td>La empresa emite <strong>Factura tipo A, B o C</strong> según la condición fiscal del cliente, y un <strong>comprobante tipo "X"</strong> como remito interno sin validez fiscal cuando corresponde.</td>
+                      <td>Bajo</td>
+                      <td>Dueño (Entrevista 28/05/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-05</td>
+                      <td>El horario comercial de atención es de <strong>08:00 a 13:00 hs</strong> (Turno mañana) y de <strong>16:00 a 20:00 hs</strong> (Turno tarde).</td>
+                      <td>Bajo</td>
+                      <td>Dueño (Entrevista 28/05/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-06</td>
+                      <td>Los servicios técnicos de <strong>emergencia</strong> (pérdidas de agua o fugas de gas) reciben <strong>prioridad inmediata</strong> sobre otros trabajos ya programados.</td>
+                      <td>Medio</td>
+                      <td>Dueño (Entrevista 28/05/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-07</td>
+                      <td>La asignación de turnos de servicio técnico se realiza por <strong>orden de llegada</strong> de la solicitud, salvo que se trate de una emergencia.</td>
+                      <td>Medio</td>
+                      <td>Dueño (Entrevista 28/05/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-08</td>
+                      <td>El servicio a domicilio no tiene un radio geográfico fijo: por lo general cubre <strong>San Miguel de Tucumán (Capital) y alrededores</strong>.</td>
+                      <td>Alto</td>
+                      <td>Dueño (Entrevista 28/05/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-09</td>
+                      <td>El sistema debe generar una <strong>alerta automática</strong> cuando el stock de un producto alcance el nivel mínimo de reposición definido por el dueño.</td>
+                      <td>Alto</td>
+                      <td>Dueño (Entrevista 14/08/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-10</td>
+                      <td>Los medios de pago aceptados son: <strong>Efectivo, tarjeta de débito, tarjeta de crédito y transferencia bancaria</strong>.</td>
+                      <td>Medio</td>
+                      <td>Dueño (Entrevista 14/08/26)</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">RN-11</td>
+                      <td>Los servicios técnicos realizados cuentan con un <strong>plazo de garantía de 30 días</strong> frente a fallas atribuibles a la instalación o reparación.</td>
+                      <td>Medio</td>
+                      <td>Dueño (Entrevista 14/08/26)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 4. PROCESOS REDISEÑADOS CON INTERVENCIÓN DEL SISTEMA -->
+            <div id="av2-procesos-sis" class="artifact-card">
+              <span class="artifact-badge">Procesos To-Be (Con Sistema)</span>
+              <h2 class="h4 fw-bold mt-2">4. Procesos de Negocio Rediseñados (BPD con Sistema)</h2>
+              <p class="small text-muted">A diferencia de la 1ª Entrega, estos diagramas incorporan el carril <strong>Sistema</strong> automatizando cálculos, alertas de stock, agenda digital y facturación.</p>
+
+              <ul class="nav nav-tabs mb-3" role="tablist">
+                <li class="nav-item"><button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#bpdsis1" type="button">3.1 Venta de Productos</button></li>
+                <li class="nav-item"><button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpdsis2" type="button">3.2 Actualización de Stock</button></li>
+                <li class="nav-item"><button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpdsis3" type="button">3.3 Facturación</button></li>
+                <li class="nav-item"><button class="nav-link fw-semibold" data-bs-toggle="tab" data-bs-target="#bpdsis4" type="button">3.4 Servicios Técnicos</button></li>
+              </ul>
+
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="bpdsis1">
+                  <p class="small">El empleado consulta stock en el sistema, registra la venta, se descuenta stock automáticamente, dispara alerta si llega al mínimo y genera el comprobante según condición fiscal.</p>
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa2/bpd-ventas-sis.png', 'BPD Rediseñado 3.1 · Venta de Productos con Sistema')">
+                    <img src="img/etapa2/bpd-ventas-sis.png" alt="BPD Venta con Sistema (img/etapa2/bpd-ventas-sis.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpdsis2">
+                  <p class="small">El empleado verifica mercadería contra pedido; si coincide, registra el ingreso en el sistema que actualiza stock, precio y fecha en la base de datos reemplazando cuaderno y Excel.</p>
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa2/bpd-stock-sis.png', 'BPD Rediseñado 3.2 · Actualización de Stock con Sistema')">
+                    <img src="img/etapa2/bpd-stock-sis.png" alt="BPD Stock con Sistema (img/etapa2/bpd-stock-sis.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpdsis3">
+                  <p class="small">El sistema valida la condición fiscal del cliente, determina automáticamente si corresponde Factura A, B, C o remito X, calcula el importe total y emite el documento.</p>
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa2/bpd-facturacion-sis.png', 'BPD Rediseñado 3.3 · Facturación con Sistema')">
+                    <img src="img/etapa2/bpd-facturacion-sis.png" alt="BPD Facturación con Sistema (img/etapa2/bpd-facturacion-sis.png)">
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bpdsis4">
+                  <p class="small">El sistema evalúa si es emergencia para dar turno inmediato con prioridad o consulta la agenda digital por orden de llegada, registra en base de datos y factura al finalizar.</p>
+                  <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa2/bpd-servicios-sis.png', 'BPD Rediseñado 3.4 · Servicios Técnicos con Sistema')">
+                    <img src="img/etapa2/bpd-servicios-sis.png" alt="BPD Servicios con Sistema (img/etapa2/bpd-servicios-sis.png)">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. GLOSARIO Y DICCIONARIO DE DATOS -->
+            <div id="av2-glosario" class="artifact-card">
+              <span class="artifact-badge">REQ_GLOSARIO (V1.0)</span>
+              <h2 class="h4 fw-bold mt-2">5. Glosario y Diccionario de Datos</h2>
+
+              <h5 class="h6 fw-bold mt-3">Definiciones del Dominio</h5>
+              <table class="table table-bordered small">
+                <thead class="table-light">
+                  <tr>
+                    <th style="width: 25%;">Término</th>
+                    <th>Definición</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="fw-semibold">Condición fiscal</td>
+                    <td>Categoría tributaria del cliente (Responsable Inscripto, Monotributista o Consumidor Final) que determina el tipo de comprobante a emitir.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">Emergencia</td>
+                    <td>Situación de servicio técnico que requiere atención inmediata, como una pérdida de agua o una fuga de gas.</td>
+                  </tr>
+                  <tr>
+                    <td class="fw-semibold">Comprobante tipo X</td>
+                    <td>Remito interno sin validez fiscal, utilizado como constancia de entrega.</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <h5 class="h6 fw-bold mt-4">Diccionario de Datos</h5>
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Entidad</th>
+                      <th>Atributo</th>
+                      <th>Descripción</th>
+                      <th>Formato</th>
+                      <th>Rango / Valores</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td rowspan="4" class="fw-bold bg-light">Producto</td>
+                      <td>Nombre del producto</td>
+                      <td>Identifica al artículo en ventas y stock.</td>
+                      <td>Alfanumérico (50)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Cantidad</td>
+                      <td>Unidades involucradas en venta o ingreso.</td>
+                      <td>Numérico</td>
+                      <td>> 0</td>
+                    </tr>
+                    <tr>
+                      <td>Precio unitario</td>
+                      <td>Precio de venta de una unidad.</td>
+                      <td>Numérico (moneda)</td>
+                      <td>> 0</td>
+                    </tr>
+                    <tr>
+                      <td>Precio total</td>
+                      <td>Resultado de cantidad × precio unitario.</td>
+                      <td>Numérico (moneda)</td>
+                      <td>> 0</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3" class="fw-bold bg-light">Comprobante</td>
+                      <td>Fecha de operación</td>
+                      <td>Fecha en que se realiza la venta o servicio.</td>
+                      <td>DD/MM/AAAA</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Tipo de comprobante</td>
+                      <td>Indica el tipo de documento emitido.</td>
+                      <td>Alfanumérico (1)</td>
+                      <td>A, B, C, X</td>
+                    </tr>
+                    <tr>
+                      <td>Importe total</td>
+                      <td>Monto total registrado en el comprobante.</td>
+                      <td>Numérico (moneda)</td>
+                      <td>> 0</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3" class="fw-bold bg-light">Cliente</td>
+                      <td>Nombre del cliente</td>
+                      <td>Nombre y apellido o razón social.</td>
+                      <td>Alfanumérico (50)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Dirección</td>
+                      <td>Domicilio para servicios a domicilio.</td>
+                      <td>Alfanumérico (100)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Datos de contacto</td>
+                      <td>Teléfono u otro medio de contacto.</td>
+                      <td>Alfanumérico (30)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3" class="fw-bold bg-light">Orden de Trabajo</td>
+                      <td>Tipo de problema</td>
+                      <td>Descripción del servicio técnico requerido.</td>
+                      <td>Alfanumérico (500)</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Fecha y horario</td>
+                      <td>Fecha y franja horaria acordada.</td>
+                      <td>DD/MM/AAAA - HH:MM</td>
+                      <td>—</td>
+                    </tr>
+                    <tr>
+                      <td>Es emergencia</td>
+                      <td>Indica prioridad inmediata sobre turnos.</td>
+                      <td>Sí / No</td>
+                      <td>SÍ (prioriza) / NO</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
@@ -483,7 +839,6 @@
       <div class="tab-pane fade" id="avance3" role="tabpanel">
         <div class="row">
           
-          <!-- Índice Rápido Lateral -->
           <div class="col-lg-3 d-none d-lg-block">
             <div class="sidebar-index">
               <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 3º Entrega</p>
@@ -498,7 +853,6 @@
             </div>
           </div>
 
-          <!-- Contenido Principal -->
           <div class="col-lg-9">
 
             <!-- 1. DIAGRAMA GENERAL DE CASOS DE USO -->
@@ -860,7 +1214,6 @@
 
               <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
                 
-                <!-- P1 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-01.png', 'Prototipo 1: Inicio de sesión (Precondición general)')">
                     <img src="img/etapa3/prototipo-01.png" alt="Prototipo 1">
@@ -871,7 +1224,6 @@
                   </div>
                 </div>
 
-                <!-- P2 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-02.png', 'Prototipo 2: Menú principal del Empleado (CU 1, 2, 3, 4 y 6)')">
                     <img src="img/etapa3/prototipo-02.png" alt="Prototipo 2">
@@ -882,7 +1234,6 @@
                   </div>
                 </div>
 
-                <!-- P3 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-03.png', 'Prototipo 3: Inicio Gerente General y Alertas (CU 5, 7 y RN 9)')">
                     <img src="img/etapa3/prototipo-03.png" alt="Prototipo 3">
@@ -893,7 +1244,6 @@
                   </div>
                 </div>
 
-                <!-- P4 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-04.png', 'Prototipo 4: Registrar venta - Líneas de venta (CU 1)')">
                     <img src="img/etapa3/prototipo-04.png" alt="Prototipo 4">
@@ -904,7 +1254,6 @@
                   </div>
                 </div>
 
-                <!-- P5 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-05.png', 'Prototipo 5: Registrar venta - Cierre y pago (CU 1)')">
                     <img src="img/etapa3/prototipo-05.png" alt="Prototipo 5">
@@ -915,7 +1264,6 @@
                   </div>
                 </div>
 
-                <!-- P6 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-06.png', 'Prototipo 6: Actualizar stock - Ingreso de mercadería (CU 2)')">
                     <img src="img/etapa3/prototipo-06.png" alt="Prototipo 6">
@@ -926,7 +1274,6 @@
                   </div>
                 </div>
 
-                <!-- P7 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-07.png', 'Prototipo 7: Emitir comprobante (CU 3)')">
                     <img src="img/etapa3/prototipo-07.png" alt="Prototipo 7">
@@ -937,7 +1284,6 @@
                   </div>
                 </div>
 
-                <!-- P8 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-08.png', 'Prototipo 8: Servicio técnico - Solicitud y turno (CU 4)')">
                     <img src="img/etapa3/prototipo-08.png" alt="Prototipo 8">
@@ -948,7 +1294,6 @@
                   </div>
                 </div>
 
-                <!-- P9 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-09.png', 'Prototipo 9: Servicio técnico - Cierre de orden (CU 4)')">
                     <img src="img/etapa3/prototipo-09.png" alt="Prototipo 9">
@@ -959,7 +1304,6 @@
                   </div>
                 </div>
 
-                <!-- P10 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-10.png', 'Prototipo 10: Gestionar productos (CU 5)')">
                     <img src="img/etapa3/prototipo-10.png" alt="Prototipo 10">
@@ -970,7 +1314,6 @@
                   </div>
                 </div>
 
-                <!-- P11 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-11.png', 'Prototipo 11: Gestionar clientes (CU 6)')">
                     <img src="img/etapa3/prototipo-11.png" alt="Prototipo 11">
@@ -981,7 +1324,6 @@
                   </div>
                 </div>
 
-                <!-- P12 -->
                 <div class="col">
                   <div class="proto-card" onclick="ampliarImagen('img/etapa3/prototipo-12.png', 'Prototipo 12: Gestionar proveedores (CU 7)')">
                     <img src="img/etapa3/prototipo-12.png" alt="Prototipo 12">
