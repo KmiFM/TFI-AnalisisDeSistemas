@@ -159,6 +159,20 @@
       padding: 1.25rem;
       margin-bottom: 1rem;
     }
+
+    .up-cell-c {
+      background-color: #ccfbf1 !important;
+      color: #115e59;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .up-cell-r {
+      background-color: #e0f2fe !important;
+      color: #0369a1;
+      font-weight: 700;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -193,7 +207,7 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="av4-tab" data-bs-toggle="pill" data-bs-target="#avance4" type="button" role="tab">
-            4º Entrega: Diseño y Cierre
+            4º Entrega: Viabilidad y Cierre
           </button>
         </li>
       </ul>
@@ -461,11 +475,10 @@
         </div>
       </div>
 
-      <!-- ==================== 2º ENTREGA (COMPLETA) ==================== -->
+      <!-- ==================== 2º ENTREGA ==================== -->
       <div class="tab-pane fade" id="avance2" role="tabpanel">
         <div class="row">
 
-          <!-- Índice Rápido Lateral -->
           <div class="col-lg-3 d-none d-lg-block">
             <div class="sidebar-index">
               <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 2º Entrega</p>
@@ -477,7 +490,6 @@
             </div>
           </div>
 
-          <!-- Contenido Principal -->
           <div class="col-lg-9">
 
             <!-- 1. DOCUMENTO VISIÓN -->
@@ -665,7 +677,7 @@
             <div id="av2-procesos-sis" class="artifact-card">
               <span class="artifact-badge">Procesos To-Be (Con Sistema)</span>
               <h2 class="h4 fw-bold mt-2">4. Procesos de Negocio Rediseñados (BPD con Sistema)</h2>
-              <p class="small text-muted">A diferencia de la 1ª Entrega, estos diagramas incorporan el carril <strong>Sistema</strong> automatizando cálculos, alertas de stock, agenda digital y facturación.</p>
+              <p class="small text-muted">Incorporan el carril <strong>Sistema</strong> automatizando cálculos, alertas de stock, agenda digital y facturación.</p>
 
               <ul class="nav nav-tabs mb-3" role="tablist">
                 <li class="nav-item"><button class="nav-link active fw-semibold" data-bs-toggle="tab" data-bs-target="#bpdsis1" type="button">3.1 Venta de Productos</button></li>
@@ -704,7 +716,7 @@
 
             <!-- 5. GLOSARIO Y DICCIONARIO DE DATOS -->
             <div id="av2-glosario" class="artifact-card">
-              <span class="artifact-badge">REQ_GLOSARIO (V1.0)</span>
+              <span class="artifact-badge">REQ_GLOSARIO (V1.0 · Act. 14/11/2026)</span>
               <h2 class="h4 fw-bold mt-2">5. Glosario y Diccionario de Datos</h2>
 
               <h5 class="h6 fw-bold mt-3">Definiciones del Dominio</h5>
@@ -717,16 +729,16 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <td class="fw-semibold">Comprobante tipo X</td>
+                    <td>Remito interno sin validez fiscal, utilizado como constancia de entrega.</td>
+                  </tr>
+                  <tr>
                     <td class="fw-semibold">Condición fiscal</td>
                     <td>Categoría tributaria del cliente (Responsable Inscripto, Monotributista o Consumidor Final) que determina el tipo de comprobante a emitir.</td>
                   </tr>
                   <tr>
                     <td class="fw-semibold">Emergencia</td>
                     <td>Situación de servicio técnico que requiere atención inmediata, como una pérdida de agua o una fuga de gas.</td>
-                  </tr>
-                  <tr>
-                    <td class="fw-semibold">Comprobante tipo X</td>
-                    <td>Remito interno sin validez fiscal, utilizado como constancia de entrega.</td>
                   </tr>
                 </tbody>
               </table>
@@ -835,7 +847,7 @@
         </div>
       </div>
 
-      <!-- ==================== 3º ENTREGA (COMPLETA) ==================== -->
+      <!-- ==================== 3º ENTREGA ==================== -->
       <div class="tab-pane fade" id="avance3" role="tabpanel">
         <div class="row">
           
@@ -1341,12 +1353,382 @@
         </div>
       </div>
 
-      <!-- ==================== 4º ENTREGA (PENDIENTE) ==================== -->
+      <!-- ==================== 4º ENTREGA (COMPLETA) ==================== -->
       <div class="tab-pane fade" id="avance4" role="tabpanel">
-        <div class="artifact-card text-center py-5">
-          <i class="bi bi-layers fs-1" style="color: var(--primary-accent);"></i>
-          <h3 class="h4 fw-bold mt-2">4º Entrega: Diseño y Cierre del TFI</h3>
-          <p class="text-muted">Pasame el archivo de la 4º entrega (Diagramas de Clases de Diseño, Secuencia de Diseño, DER/Persistencia, etc.) y cerramos el proyecto.</p>
+        <div class="row">
+
+          <div class="col-lg-3 d-none d-lg-block">
+            <div class="sidebar-index">
+              <p class="fw-bold text-uppercase small text-muted mb-2">Índice · 4º Entrega</p>
+              <a href="#av4-viabilidad-tec">1. Viabilidad Técnica y Operativa</a>
+              <a href="#av4-viabilidad-eco">2. Viabilidad Económica (Costos)</a>
+              <a href="#av4-riesgos-gantt">3. Riesgos y Cronograma (Gantt)</a>
+              <a href="#av4-marco-up">4. Marco de Desarrollo (UP)</a>
+              <a href="#av4-conclusion">5. Conclusión y Bibliografía</a>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+
+            <!-- 1. VIABILIDAD TÉCNICA Y OPERACIONAL -->
+            <div id="av4-viabilidad-tec" class="artifact-card">
+              <span class="artifact-badge">Informe de Viabilidad</span>
+              <h2 class="h4 fw-bold mt-2">1. Viabilidad Técnica y Operacional</h2>
+              <p class="small text-muted">Evaluación de infraestructura tecnológica, herramientas de desarrollo e impacto organizativo en Instal-Gas.</p>
+
+              <div class="row g-3 mt-1 small">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <h6 class="fw-bold" style="color: var(--primary-dark);"><i class="bi bi-pc-display me-1"></i> Recursos de Hardware</h6>
+                    <ul class="ps-3 mb-0">
+                      <li><strong>Entrada:</strong> 2 Teclados y 2 Mouse estándar, 1 Lector de Código de Barras USB (mostrador).</li>
+                      <li><strong>Salida:</strong> 2 Monitores LED 21.5", 1 Impresora Térmica de Ticket (80 mm), 1 Impresora Multifunción A4.</li>
+                      <li><strong>Procesamiento:</strong> 2 PC Escritorio (Intel Core i5 / AMD Ryzen 5, 16 GB RAM).</li>
+                      <li><strong>Almacenamiento:</strong> SSD 480 GB por equipo + Unidad externa respaldo USB 1 TB.</li>
+                      <li><strong>Comunicaciones:</strong> Router Wi-Fi/Ethernet, Fibra Óptica 100 Mbps y Red Local (LAN).</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <h6 class="fw-bold" style="color: var(--primary-dark);"><i class="bi bi-code-square me-1"></i> Recursos de Software</h6>
+                    <ul class="ps-3 mb-0">
+                      <li><strong>Sistema Operativo:</strong> Windows 11 Home / Pro (64 bits).</li>
+                      <li><strong>Lenguaje de Programación:</strong> Java (JDK 17 o superior).</li>
+                      <li><strong>Base de Datos:</strong> PostgreSQL (o MySQL) Open Source.</li>
+                      <li><strong>Seguridad:</strong> Windows Defender activado y actualizado.</li>
+                      <li><strong>Servicios Cloud:</strong> Hosting para backups y API de Facturación Electrónica (AFIP).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded mt-3 small" style="background-color: #f0fdfa; border: 1px solid #99f6e4;">
+                <h6 class="fw-bold mb-2" style="color: var(--primary-dark);"><i class="bi bi-people-fill me-1"></i> Viabilidad Operacional</h6>
+                <div class="row g-2">
+                  <div class="col-md-4"><strong>Predisposición:</strong> Alta motivación del personal de mostrador para migrar de papel/Excel a un sistema ágil.</div>
+                  <div class="col-md-4"><strong>Capacitación:</strong> Interfaz intuitiva; requiere entrenamiento breve (~10 a 20 hs en horario laboral).</div>
+                  <div class="col-md-4"><strong>Impacto:</strong> Agiliza atención en mostrador, evita quiebres de stock crítico y ordena agenda técnica.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. VIABILIDAD ECONÓMICA -->
+            <div id="av4-viabilidad-eco" class="artifact-card">
+              <span class="artifact-badge">Presupuesto</span>
+              <h2 class="h4 fw-bold mt-2">2. Viabilidad Económica (Estimación de Costos)</h2>
+
+              <h6 class="fw-bold mt-3">2.1 Costos de Hardware</h6>
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Recurso de Hardware</th>
+                      <th>Proveedor</th>
+                      <th class="text-end" style="width: 22%;">Costo ($)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tecnologías de Entrada: Lector de código de barras USB</td>
+                      <td>MercadoLibre / Proveedor Local</td>
+                      <td class="text-end">$ 48.500</td>
+                    </tr>
+                    <tr>
+                      <td>Tecnologías de Salida: Impresora de tickets (80mm) + Multifunción A4</td>
+                      <td>MercadoLibre / Proveedor Local</td>
+                      <td class="text-end">$ 385.000</td>
+                    </tr>
+                    <tr>
+                      <td>Tecnologías de Procesamiento: Actualización RAM / Equipos PC</td>
+                      <td>Propiedad previa de la empresa</td>
+                      <td class="text-end">$ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Tecnologías de Almacenamiento: Disco externo respaldo (1 TB)</td>
+                      <td>Proveedor Local</td>
+                      <td class="text-end">$ 82.000</td>
+                    </tr>
+                    <tr>
+                      <td>Tecnologías de Comunicaciones: Switch de red y cableado LAN</td>
+                      <td>Proveedor Local</td>
+                      <td class="text-end">$ 56.000</td>
+                    </tr>
+                    <tr class="table-light fw-bold">
+                      <td colspan="2" class="text-end">Subtotal Hardware</td>
+                      <td class="text-end">$ 571.500</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h6 class="fw-bold mt-3">2.2 Costos de Software y Servicios (Anual)</h6>
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Software / Servicio</th>
+                      <th>Detalle / Duración</th>
+                      <th class="text-end" style="width: 22%;">Costo ($)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sistema Operativo (Windows 11) + Java JDK 17 + PostgreSQL + Antivirus</td>
+                      <td>Licencias perpetuas / Open Source</td>
+                      <td class="text-end">$ 0</td>
+                    </tr>
+                    <tr>
+                      <td>Hosting / Servidor Cloud para Backups ($32.000/mes)</td>
+                      <td>12 meses</td>
+                      <td class="text-end">$ 384.000</td>
+                    </tr>
+                    <tr>
+                      <td>Servicio de Facturación Electrónica API ($25.000/mes)</td>
+                      <td>12 meses</td>
+                      <td class="text-end">$ 300.000</td>
+                    </tr>
+                    <tr class="table-light fw-bold">
+                      <td colspan="2" class="text-end">Subtotal Software y Servicios (Anual)</td>
+                      <td class="text-end">$ 684.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h6 class="fw-bold mt-3">2.3 Costos de Personal y Desarrollo</h6>
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Rol</th>
+                      <th>Cantidad y Tiempo</th>
+                      <th>Tarifa Unitaria</th>
+                      <th class="text-end" style="width: 22%;">Subtotal ($)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Gestor del Proyecto</td>
+                      <td>1 · 3 meses</td>
+                      <td>$ 1.450.000 / mes</td>
+                      <td class="text-end">$ 4.350.000</td>
+                    </tr>
+                    <tr>
+                      <td>Ingeniero en Sistemas de Información</td>
+                      <td>1 · 3 meses</td>
+                      <td>$ 1.750.000 / mes</td>
+                      <td class="text-end">$ 5.250.000</td>
+                    </tr>
+                    <tr>
+                      <td>Analista de Sistemas</td>
+                      <td>1 · 3 meses</td>
+                      <td>$ 1.350.000 / mes</td>
+                      <td class="text-end">$ 4.050.000</td>
+                    </tr>
+                    <tr>
+                      <td>Programadores (Java / PostgreSQL)</td>
+                      <td>2 · 3 meses</td>
+                      <td>$ 1.200.000 / mes</td>
+                      <td class="text-end">$ 7.200.000</td>
+                    </tr>
+                    <tr>
+                      <td>Arquitecto de Sistemas</td>
+                      <td>1 · 1 mes (fase inicial)</td>
+                      <td>$ 1.900.000 / mes</td>
+                      <td class="text-end">$ 1.900.000</td>
+                    </tr>
+                    <tr>
+                      <td>Usuarios Finales (Capacitación)</td>
+                      <td>2 · 20 hs (en horario laboral)</td>
+                      <td>Personal interno</td>
+                      <td class="text-end">$ 0</td>
+                    </tr>
+                    <tr class="table-light fw-bold">
+                      <td colspan="3" class="text-end">Subtotal Desarrollo y Personal (Informe)</td>
+                      <td class="text-end">$ 26.050.000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="alert alert-success d-flex justify-content-between align-items-center mb-0 mt-3">
+                <strong>Inversión Total Estimada del Proyecto (Hardware + Software Anual + Desarrollo):</strong>
+                <span class="fs-5 fw-bold">$ 27.305.500</span>
+              </div>
+            </div>
+
+            <!-- 3. GESTIÓN DEL PROYECTO: RIESGOS Y GANTT -->
+            <div id="av4-riesgos-gantt" class="artifact-card">
+              <span class="artifact-badge">Gestión del Proyecto</span>
+              <h2 class="h4 fw-bold mt-2">3. Estudio de Riesgos y Calendario (Gantt)</h2>
+
+              <h6 class="fw-bold mt-3">3.1 Matriz de Riesgos Identificados</h6>
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th style="width: 22%;">Tipo de Riesgo</th>
+                      <th>Descripción del Posible Riesgo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-semibold">Tecnológico</td>
+                      <td>Fallas en la conectividad a Internet para la emisión de facturas electrónicas o pérdida de comunicación con la impresora de tickets.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Personal</td>
+                      <td>Resistencia inicial al cambio por parte de los empleados con menos experiencia en el uso de computadoras.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Organizacional</td>
+                      <td>Retraso en la definición y validación de las tarifas de los servicios de instalación por parte de la administración.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Requerimientos</td>
+                      <td>Cambios constantes o no previstos en el catálogo de repuestos de gas y en los tipos de instalaciones aceptadas.</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Herramientas</td>
+                      <td>Incompatibilidad de los lectores de código de barras existentes con el software a desarrollar.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h6 class="fw-bold mt-4">3.2 Calendario del Proyecto – Diagrama de Gantt</h6>
+              <p class="small text-muted">Planificación temporal de 3 meses a lo largo de las fases del Proceso Unificado. Hacé clic en el gráfico para ampliarlo.</p>
+              <div class="diagram-wrapper" onclick="ampliarImagen('img/etapa4/gantt.png', 'Diagrama de Gantt · Planificación del Proyecto Instal-Gas')">
+                <img src="img/etapa4/gantt.png" alt="Diagrama de Gantt (Guardar captura en img/etapa4/gantt.png)">
+              </div>
+            </div>
+
+            <!-- 4. MARCO DE DESARROLLO (PROCESO UNIFICADO) -->
+            <div id="av4-marco-up" class="artifact-card">
+              <span class="artifact-badge">Proceso Unificado (UP)</span>
+              <h2 class="h4 fw-bold mt-2">4. Marco de Desarrollo (Disciplinas y Fases UP)</h2>
+              <p class="small text-muted">Referencias: <span class="badge" style="background-color:#ccfbf1; color:#115e59;">c = Comenzar</span> <span class="badge" style="background-color:#e0f2fe; color:#0369a1;">r = Refinar</span></p>
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-sm small align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Disciplina</th>
+                      <th>Artefactos</th>
+                      <th class="text-center" style="width: 12%;">Inicio</th>
+                      <th class="text-center" style="width: 12%;">Elaboración</th>
+                      <th class="text-center" style="width: 12%;">Construcción</th>
+                      <th class="text-center" style="width: 12%;">Transición</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-semibold">Modelado del Negocio</td>
+                      <td>Modelo del Dominio</td>
+                      <td></td>
+                      <td class="up-cell-c">c</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Requisitos</td>
+                      <td>Modelo de Casos de Uso, Visión, Especificación Complementaria, Glosario</td>
+                      <td class="up-cell-c">c</td>
+                      <td class="up-cell-r">r</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Análisis y Diseño</td>
+                      <td>Modelo del Análisis</td>
+                      <td class="up-cell-c">c</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Implementación</td>
+                      <td>Modelo de Implementación</td>
+                      <td></td>
+                      <td class="up-cell-c">c</td>
+                      <td class="up-cell-r">r</td>
+                      <td class="up-cell-r">r</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Gestión de Proyecto</td>
+                      <td>Plan de Desarrollo, Informe de Viabilidad</td>
+                      <td class="up-cell-c">c</td>
+                      <td class="up-cell-r">r</td>
+                      <td class="up-cell-r">r</td>
+                      <td class="up-cell-r">r</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Pruebas</td>
+                      <td>Modelo de Prueba</td>
+                      <td></td>
+                      <td class="up-cell-c">c</td>
+                      <td class="up-cell-r">r</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Entorno</td>
+                      <td>Marco de Desarrollo</td>
+                      <td class="up-cell-c">c</td>
+                      <td class="up-cell-r">r</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 5. CONCLUSIÓN FINAL Y BIBLIOGRAFÍA -->
+            <div id="av4-conclusion" class="artifact-card">
+              <span class="artifact-badge">Cierre del TFI</span>
+              <h2 class="h4 fw-bold mt-2">5. Conclusión Final y Bibliografía</h2>
+
+              <div class="process-box">
+                <h6 class="fw-bold" style="color: var(--primary-dark);">Conclusión General</h6>
+                <p class="small mb-0">
+                  El desarrollo del presente Trabajo Final Integrador permitió aplicar de forma práctica los conceptos de la ingeniería de software y el análisis orientado a objetos utilizando el <strong>Proceso Unificado (UP)</strong>. El sistema se presenta como una solución informática robusta y viable para automatizar los procesos críticos de Instal-Gas.
+                </p>
+              </div>
+
+              <div class="row g-3 mt-1 small">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <h6 class="fw-bold text-success"><i class="bi bi-check2-circle me-1"></i> Logros Alcanzados</h6>
+                    <ul class="ps-3 mb-0">
+                      <li>Se estructuró un modelo de dominio y casos de uso claro que refleja la realidad operativa de la venta de repuestos y la coordinación de instalaciones.</li>
+                      <li>Se comprobó la viabilidad técnica, operativa y económica mediante un análisis exhaustivo respaldado con tecnología actual (<strong>Java / PostgreSQL</strong>).</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded bg-light h-100">
+                    <h6 class="fw-bold text-warning-emphasis"><i class="bi bi-exclamation-triangle me-1"></i> Observación y Recomendación</h6>
+                    <p class="mb-0">
+                      Durante el relevamiento se detectó que gran parte de la trazabilidad de las instalaciones depende de registros en papel; por ello, se recomienda una <strong>etapa inicial de carga histórica de datos precisa</strong> para evitar desfasajes en el stock de repuestos críticos (reguladores, válvulas, cañerías).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <h6 class="fw-bold mt-4">Bibliografía Consultada</h6>
+              <ul class="small text-muted">
+                <li><strong>Booch, G., Rumbaugh, J., & Jacobson, I.</strong> (2006). <em>El Lenguaje Unificado de Modelado: Guía del Usuario</em> (2.ª ed.). Pearson Educación / Addison-Wesley.</li>
+                <li><strong>Jacobson, I., Booch, G., & Rumbaugh, J.</strong> (2000). <em>El Proceso Unificado de Desarrollo de Software</em> (Cap. 8). Addison-Wesley.</li>
+                <li><strong>Kendall, K. E., & Kendall, J. E.</strong> (2011). <em>Análisis y Diseño de Sistemas</em> (8.ª ed.). Pearson Educación.</li>
+                <li><strong>Kniberg, H.</strong> (2007). <em>Scrum y XP desde las trincheras: Cómo hacemos Scrum</em>. C4Media.</li>
+                <li><strong>Larman, C.</strong> (2003). <em>UML y Patrones: Una introducción al análisis y diseño orientado a objetos y al proceso unificado</em> (2.ª ed.). Pearson Educación.</li>
+                <li><strong>Laudon, K. C., & Laudon, J. P.</strong> (2016). <em>Sistemas de Información Gerencial</em> (14.ª ed.). Pearson Educación.</li>
+                <li><strong>Sommerville, I.</strong> (2005). <em>Ingeniería del Software</em> (7.ª ed.). Pearson Educación.</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
 
